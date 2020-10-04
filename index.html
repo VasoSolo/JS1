@@ -6,21 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var a = -3;
-        var b = -2;
-        function AB(a, b) {
-            if (a >= 0 && b >= 0) {
-                return a - b;
+        //задание 1
+        var array = [1]
+        var i = 2;
+        while (i < 100) {
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    break;
+                }
+                if (j == i - 1) {
+                    array.push(i);
+                }
             }
-            if (a < 0 && b < 0) {
-                return a * b;
-            }
-            if (a * b < 0) {
-                return a + b;
-            }
+            i++;
         }
-        var c = AB(a, b)
-        alert(c);
+        //alert(array)
+
+        //задание 2
+        var basket_name = ["product1", "product2", "product3"]; // наименование продукта
+        var basket_price = [100, 70, 200]; // цена продукта
+        var basket_quant = [2, 1, 1] // количество продутка в корзине
+        var new_product = { name: "product4", price: 30, quantity: 2 };//новый продукт
+        function AddProduct(prod) { // фенкция добавление продукта в корзину
+            basket_name.push(prod.name);
+            basket_price.push(prod.price);
+            basket_quant.push(prod.quantity);
+        }
+        AddProduct(new_product);
+        var i = 0;
+        var SumPrice = 0;
+        while (i < basket_name.length) {
+            SumPrice = SumPrice + basket_price[i] * basket_quant[i];
+            i++;
+        }
+        if (basket_name.length == 0) {
+            alert("Корзина пуста");
+        }
+        else {
+            alert(SumPrice);
+        }
+
+
     </script>
 </head>
 
