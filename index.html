@@ -5,32 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function DigToObj(num) {
-            if (0 < num < 1000) {
-                var str = String(num)
-                str = str.padStart(3, "0")
-                var Obj = {
-                    "единицы": str.slice(2, 3),
-                    "десятки": str.slice(1, 2),
-                    "сотни": str.slice(0, 1)
-                }
-            }
-            if (num > 999) {
-                var Obj = {}
-                alert("число превышает 999")
-            }
-            return Obj
-        }
-        var Obj2 = DigToObj(853)
-        alert(DigToObj(853).сотни)
-
-
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div class="board" id="board">
 
+    </div>
+    <script src="code.js"></script>
 </body>
 
 </html>
