@@ -1,0 +1,44 @@
+
+.head {
+    height: 80px;
+    background-color:wheat;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart {
+    background-color:turquoise;
+    margin-right: 50px;
+    padding: 10px;
+    padding-right: 50px;
+}
+
+.card_list {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 400px;
+    padding: 20px;
+}
+
+.card {
+    background-color: teal;
+    width: 250px;
+    text-align: center;
+}
+
+.card img{
+    height: 100px;
+}
+
+.card p{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.addCart {
+    margin-top: 100px;
+    padding: 10px;
+    font-size: 20px;
+}

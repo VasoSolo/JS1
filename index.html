@@ -5,13 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-
-    </script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <div class="container">
+        <div class="head">
+            <button class="cart">корзина</button>
+        </div>
+        <div class="card_list">
+            <div class="card1 card" id="card_aircraft">
+                <h2 class="card_aircraft_h2">Самолёт</h2>
+                <img src="img/aircraft.jpg" alt="aircraft">
+                <p class="card_aircraft_p">11500</p>
+                <button class="addCart" id="btnAddCart_aircraft">в корзину</button>
+            </div>
+            <div class="card2 card">
+                <h2 class="card_elephant_h2">Слон</h2>
+                <img src="img/elephant.jpg" alt="elephant">
+                <p class="card_elephant_p">85</p>
+                <button class="addCart" id="btnAddCart_elephant">в корзину</button>
+            </div>
+            <div class="card3 card">
+                <h2 class="card_messi_h2">Месси</h2>
+                <img src="img/messi.jpg" alt="messi">
+                <p class="card_messi_p">600</p>
+                <button class="addCart" id="btnAddCart_messi">в корзину</button>
+            </div>
+        </div>
+    </div>
+    <script src="code.js"></script>
 </body>
 
 </html>
