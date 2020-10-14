@@ -1,47 +1,51 @@
-var i = 2;
-var flag = 0; //флаг для определения конца строки
-var block = document.createElement("div");
-var board = document.querySelector(".board");
-board.appendChild(block);
-block.setAttribute("style", "text-align: center; padding-top: 1.5em;");
-block.innerText = 8;
-var NumRow = 7;
-while (i <= 72) {
-    if (flag == 1) { // создаём столбец с цифрами
-        var block_num = document.createElement("div");
-        board.appendChild(block_num);
-        block_num.setAttribute("style", "text-align: center; padding-top: 1.5em;");
-        if (NumRow > 0) {
-            block_num.innerText = NumRow;
-        }
-        NumRow--
-        i++
-        flag = 0;
-    }
+var cart = [];
 
-    var block = document.createElement("div"); //создаём клетку
-    board.appendChild(block);
-    if (i % 9 == 0) { //фиксируем конец строки
-        flag = 1;
+function product(name, price) {
+    this.name = name;
+    this.price = price;
+
+    this.AddCart = function () {
+        cart.push(this);
     }
-    Choice() //окрашиваем клетку
-    i++;
 }
-var block = document.createElement("div"); //клетка в углу
-board.appendChild(block);
-var j = 0;
-while (j <= 9) { //создаём строку с буквами
-    var block = document.createElement("div");
-    board.appendChild(block);
-    block.innerText = "ABCDEFGH".slice(j, j + 1);
-    block.setAttribute("style", "text-align: center; padding-top: 1em;");
-    j++;
+var cart_btn = document.querySelector(".cart");
+function add_aircraft() {
+    var name = document.querySelector(".card_aircraft_h2");
+    var price = document.querySelector(".card_aircraft_p");
+    var newProduct = new product(name.innerHTML, price.innerHTML);
+    newProduct.AddCart();
+    reDrawcart();
 }
-function Choice() { //функция выббора цвета
-    if (i % 2) {
-        block.setAttribute("style", "background-color: black;");
-    }
-    else {
-        block.setAttribute("style", "background-color: bisque;");
-    }
+var btn_aircraft = document.getElementById("btnAddCart_aircraft");
+btn_aircraft.addEventListener("click", add_aircraft);
+
+function add_elephant() {
+    var name = document.querySelector(".card_elephant_h2");
+    var price = document.querySelector(".card_elephant_p");
+    var newProduct = new product(name.innerHTML, price.innerHTML);
+    newProduct.AddCart();
+    reDrawcart();
+}
+var btn_elephant = document.getElementById("btnAddCart_elephant");
+btn_elephant.addEventListener("click", add_elephant);
+
+function add_messi() {
+    var name = document.querySelector(".card_messi_h2");
+    var price = document.querySelector(".card_messi_p");
+    var newProduct = new product(name.innerHTML, price.innerHTML);
+    newProduct.AddCart();
+    reDrawcart();
+}
+var btn_messi = document.getElementById("btnAddCart_messi");
+btn_messi.addEventListener("click", add_messi);
+
+function reDrawcart() {
+    cart_btn.innerHTML = "корзина (" + cart.length + ") " + sum()
+}
+function sum() {
+    var sum = 0;
+    cart.forEach(element => {
+        sum = Number(sum) + Number(element.price);
+    });
+    return sum;
 }
